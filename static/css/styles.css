@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0; /* Фон страницы */
+  display: flex;
+  flex-direction: column; /* Меняем направление контейнера на вертикальное */
+  align-items: center;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #81b0e5; /* Цвет фона шапки */
+  width: 100%; /* Ширина шапки на всю страницу */
+  padding: 20px 0; /* Отступы сверху и снизу для шапки */
+  text-align: center; /* Выравнивание текста по центру */
+}
+
+.container {
+  max-width: 960px; /* Максимальная ширина контейнера для меню */
+  margin: 0 auto; /* Выравнивание по центру горизонтально */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  display: inline;
+  margin-right: 30px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 35px;
+  transition: color 0.3s ease;
+  padding: 10px 20px;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+}
+
+ul li a:hover,
+ul li a.current { /* Добавляем стили для текущей страницы */
+  background-color: #ffffff;
+  color: #81b0e5;
+}
+
+
+.content {
+  display: flex; /* Размещение текстового блока и изображения в одной строке */
+  align-items: center; /* Выравнивание по вертикали */
+  margin-top: 20px; /* Отступ сверху для контента */
+}
+.text-block {
+  flex: 1;
+  padding: 20px;
+  border: 2px solid #81b0e5;
+  border-radius: 5px;
+  text-align: center;
+  background-color: white;
+}
+
+.text-block p {
+  font-size: 36px;
+  font-weight: bold;
+  color: #4682B4;
+}
+
+.image-container {
+  border-top: 2px solid #81b0e5;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.image-container a {
+  text-decoration: none;
+  color: white; /* Белый текст ссылки */
+  font-weight: bold;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Плавное изменение цвета текста и фона при наведении */
+  padding: 5px 15px;
+  background-color: #81b0e5; /* Голубой фон ссылки */
+  border: 3px solid #81b0e5;
+  border-radius: 8px;
+  font-size: 24px;
+}
+
+.image-container a:hover {
+  background-color: white; /* Белый фон при наведении */
+  color: #81b0e5; /* Голубой текст при наведении */
+}
+
+.image-container img {
+  max-width: 100%;
+}
+
+/* Стили для блока с классом "with-border" */
+.with-border {
+  border: 2px solid #81b0e5; /* Голубая рамка */
+  border-radius: 5px; /* Закругление углов рамки */
+  padding: 20px; /* Отступ вокруг блока */
+  text-align: center; /* Выравнивание текста по центру */
+  background-color: white; /* Белый фон блока */
+  margin-top: 20px; /* Отступ сверху */
+}
+
+/* Добавляем стили для текста внутри блока */
+.with-border p {
+  font-size: 24px; /* Размер текста */
+  font-weight: bold; /* Жирный текст */
+  color: #4682B4; /* Цвет текста */
+}
+
+/* Стили для изображения внутри блока */
+.with-border .image-container img {
+  max-width: 100%; /* Чтобы изображение масштабировалось по ширине контейнера */
+  border-bottom: 2px solid #81b0e5; /* Добавляем нижнюю рамку */
+  margin-bottom: 10px; /* Отступ снизу между изображением и рамкой */
+}
+

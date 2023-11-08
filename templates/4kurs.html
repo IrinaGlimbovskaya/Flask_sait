@@ -1,0 +1,78 @@
+{% extends 'base.html'%}
+{% block head%}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/ind.css') }}">
+{% endblock %}
+{% block title%}
+4 Курс
+{% endblock %}
+
+{% block body%}
+<div class="container">
+    <div>
+	<form method = GET action = 2.ptn id=test_form></form>
+		<table align="center" >
+    <tr>
+      <map name="box">
+      <a href ="#" title="Антон Вертос.Студент 3 курса кафедры ИиПИ.
+Во время летней практики написал игру 2Д Лабиринт"> <area shape="rect" coords="50,150,180,300" href="{{ url_for('static',filename='students_site/Vertos_Site/Vertos.html') }}" alt="Вертос"></a>
+      <a href ="#" title="Денис Исаков.Студент 3 курса кафедры ИиПИ.
+Во время летней практики написал игру Огонь и вода"> <area shape="rect" coords="150,150,320,300" href="lab2d.rar" alt="Исаков"></a>
+      <a href ="#" title="Максим Фонарюк.Студент 3 курса кафедры ИиПИ.
+Во время летней практики написал игру Марио"> <area shape="rect" coords="250,190,400,300" href="web/Fon.html" alt="Фонарюк"></a>
+      <a href ="#" title="Дмитрий Стефанцов.Студент 3 курса кафедры ИиПИ.
+Во время летней практики написал игру 3Д Кубик Рубика"> <area shape="rect" coords="350,165,500,300" href="Stef/Stef.html" alt="Стефанцов"></a>
+      <a href ="#" title="Полищук Евгений.Студент 3 курса кафедры ИиПИ.
+Во время летней практики написал игру Арканоид"> <area shape="rect" coords="450,165,610,300" href="SiteEvgexa/Glav.html" alt="Полищук"></a>
+      <a href ="#" title="Ларченко Максим.Студент 3 курса кафедры ИиПИ.
+Во время летней практики написал игру 3Д Лабиринт"> <area shape="rect" coords="550,165,720,300" href="Lar/Lar.html" alt="Ларченко"></a>
+      <a href ="#" title="Глазов Анатолий Борисович.Куратор группы 3 курса кафедры ИиПИ.
+Создал игру Уголки"> <area shape="rect" coords="50,150,180,500" href="http://abglazov.rfpgu.ru/" alt="Глазов"></a>
+      <a href ="#" title="Высочанская Татьяна.Студентка 3 курса кафедры ИиПИ.
+Во время летней практики написала игру Домино"> <area shape="rect" coords="250,150,360,550" href="labirint.rar" alt="Высочанская"></a>
+      <a href ="#" title="Станева Анастасия.Студентка 3 курса кафедры ИиПИ.
+Во время летней практики написала Симулятор электронных схем"> <area shape="rect" coords="350,150,500,550" href="St_web/Stan.html" alt="Станева"></a>
+      <a href ="#" title="Глимбовская Ирина.Студентка 3 курса кафедры ИиПИ.
+Во время летней практики реализовала игры Угадай число в веб формате"> <area shape="rect" coords="500,150,630,550" href="me/ind.ptn" alt="Глимбовская"></a>
+
+      </map>
+      <div class="photo-container-" > <img usemap="#box"src="{{ url_for('static',filename='images/group.png') }}" width="800" height="600" margin = "20"></div>>
+
+    </tr>
+  </table>
+	<p style="font-size: 25px;" width = 600 align="center">На этом сайте представлены игры студентов группы РФ20ДР62ПИ1, реализованных во время учебной практики.</p>
+	<p style="font-size: 25px;" align="center">
+			Игры от автора сайта: </p>
+	<form method = GET action = 10.ptn id=test_form>
+	<div class="container-stud">
+		<div class="student-container">
+				<div class="photo-container">
+					<img src="{{ url_for('static',filename='images/numb.png') }}"  alt="Фото игры">
+				</div>
+				<p><a href="index_end.htm">1. Игра "Угадай число"</a></p>
+			</div>
+		<div class="student-container">
+				<div class="photo-container">
+					<img src="{{ url_for('static',filename='images/bull_cow.PNG') }}" alt="Фото игры">
+				</div>
+				<p><a href="index_bull_cow.htm">2. Игра "Быки и коровы"</a></p>
+		</div>
+	</div>
+
+	<p style="font-size: 25px;" align="center">
+			Игры тренера и студентов группы: </p>
+
+<div class="students-row">
+    {% for el in Studens: %}
+        <div class="student-container">
+            <h2>{{el.name}}</h2>
+            <div class="photo-container">
+                <img src="{{ url_for('static',filename='images/{{el.picture}}') }}" alt="Фото игры">
+            </div>
+            <p><a href="{{ url_for('static',filename='archive/{{el.href}}') }}"{{el.name_game}}</a></p>
+        </div>
+    <%endfor%>
+</div>
+	</form>
+</div>
+</div>
+{% endblock %}

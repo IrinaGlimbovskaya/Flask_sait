@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Color Rectangle</title>
+	<style>
+	  #rect{
+		width:200px;
+		height:200px;
+		border: 1px solid white;
+		margin-bottom:10px;
+		margin-top:10px;
+	  }
+	  button{
+		margin-left:40px;
+	  }
+	</style>
+</head>
+<body>
+	<div id=rect></div>
+	<div> 
+		<button onclick = 'start_recogn();'>Старт</button>
+		<button onclick = 'stop_recogn();'>Стоп</button>
+	</div>
+</body>
+<script>
+//= функции
+const cl = (val,cmt="")=>{console.log(cmt, val)}
+const el = (id)=> document.getElementById(id);
+
+let flag_recog = false
+
+const start_recogn = ()=>{
+	if( !flag_recog){
+		recognition.start()
+		flag_recog = true
+	}
+}
+
+const stop_recogn = ()=>{
+    recognition.abort()
+    flag_recog = false	
+}
+
+//--создаем и настраиваем экземпляр SpeechRecognition:
+const speechRecognition =
+	window.SpeechRecognition || window.webkitSpeechRecognition
+
+const recognition = new speechRecognition()
+recognition.continuous = true;    //продолжить после первого результата
+recognition.interimResults = true; // обработка промежуточных результатов
+recognition.lang = 'ru-RU';  // язык
+
+//--обработчики событий запуска, ошибки и окончания распознавания речи:
+recognition.onstart = () => { cl('Распознавание голоса запущено') }
+recognition.onerror = ({ error }) => {cl(error) }
+recognition.onend = () => { cl('Распознавание голоса закончено') }
+
+//-- цвета для оформлени квадрата
+const Colors={ 
+	"белый":'white',
+	"чёрный":'black',
+	"красный":'red',
+	"синий":'blue',
+	"зелёный":'green',
+	"жёлтый":'yellow',	
+}
+
+recognition.onresult = (e) => {
+	let i = e.results.length - 1
+    if (e.results[i].isFinal) {
+		let last_text = e.results[i][0].transcript.trim()
+
+		if(last_text in Colors){
+			let color = Colors[last_text]
+			console.log(color)
+			//el('rect').style.backgroundColor=color
+		}
+		else if(last_text == "новогодняя картинка"){
+			cl('картинка');
+			el('rect').style.width="560px";
+			el('rect').style.height="366px";
+			el('rect').style.backgroundImage="URL('New year.jpg')"
+			}
+		else if(last_text == "фейерверк"){
+			cl('феерверк');
+			el1('rect1').style.backgroundImage="URL('Fireworks.gif')"
+			}
+    } 
+}
+
+</script>
+</html>
