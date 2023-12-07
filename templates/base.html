@@ -8,16 +8,29 @@
 </head>
 <body>
       <div class="header">
-        <div class="container">
+
             <ul>
-                <li><a href="/" class="current">Главная</a></li>
-                <li><a href="/kurs3">3 курс</a></li>
-                <li><a href="/kurs4">4 курс</a></li>
-                <li><a href="/about">Контакты</a></li>
+                <li><a href="/" id="home">Главная</a></li>
+                <li><a href="/kurs2" id="kurs3">РФ21ДР62ПИ</a></li>
+                <li><a href="/kurs1" id="kurs4">РФ20ДР62ПИ</a></li>
+                <li><a href="/about" id="about">Контакты</a></li>
             </ul>
-        </div>
+
   </div>
 {% block body%}{% endblock %}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var currentPage = window.location.pathname; // Получаем текущий URL страницы
 
+        // Определяем соответствующий элемент меню для текущей страницы
+        var menuItems = document.querySelectorAll("ul li a");
+        menuItems.forEach(function (menuItem) {
+            var href = menuItem.getAttribute("href");
+            if (currentPage === href) {
+                menuItem.classList.add("current");
+            }
+        });
+    });
+</script>
 </body>
 </html>

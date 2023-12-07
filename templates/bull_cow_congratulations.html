@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вы победили!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #ffcc00; /* желтый цвет */
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        canvas {
+            position: fixed;
+            pointer-events: none;
+        }
+    </style>
+    <!-- Подключаем библиотеку confetti-js -->
+    <script src="https://cdn.jsdelivr.net/npm/confetti-js"></script>
+</head>
+<body>
+    <h1>Поздравляем, {{ player_name }}!</h1>
+    <p>Вы угадали загаданное число!! 🎉</p>
+
+    <!-- Добавляем элемент canvas для конфетти -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <script>
+        // Создаем экземпляр ConfettiGenerator
+        const confettiSettings = { target: 'confetti-canvas', max: 200, clock: 50 };
+        const confetti = new ConfettiGenerator(confettiSettings);
+
+        // Запускаем конфетти
+        confetti.render();
+    </script>
+</body>
+</html>

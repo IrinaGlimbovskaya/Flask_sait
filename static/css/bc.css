@@ -1,0 +1,22 @@
+body {
+	color: #000;
+	background-color: SteelBlue;
+}
+body.g {
+	color: #000;
+	background-color: PapayaWhip;
+}
+body.p {
+	color: #000;
+	background-color: lightblue;
+}
+
+table td{
+	padding: 5px 10px;
+	border: 1px solid #eee;
+    top: 20px;
+	/*text-align: right;*/
+	background: White;
+	color:black;
+
+}

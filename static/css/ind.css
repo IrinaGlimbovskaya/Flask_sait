@@ -8,14 +8,14 @@ body {
 	min-height: 100vh;
   }
   
-.header {
+.ind-header {
 	background-color: #81b0e5; /* Цвет фона шапки */
 	width: 100%; /* Ширина шапки на всю страницу */
 	padding: 20px 0; /* Отступы сверху и снизу для шапки */
 	text-align: center; /* Выравнивание текста по центру */
   }
   
-  .container {
+  .ind-container {
 	max-width: 960px; /* Максимальная ширина контейнера для меню */
 	margin: 0 auto; /* Выравнивание по центру горизонтально */
   }

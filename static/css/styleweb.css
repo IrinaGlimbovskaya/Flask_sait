@@ -1,0 +1,72 @@
+/* styles.css */
+
+/* Выравнивание и обводка для имени студента */
+.header-subtitle {
+    text-align: center;
+    font-size: 30px;
+    border: 2px solid #81b0e5;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 20px 0;
+}
+
+/* Фото студента */
+.header-img-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-img {
+    max-width: 200px; /* Размер фото студента */
+    border-radius: 10px; /* Закругление углов */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень для фото */
+}
+
+/* Стили для таблиц */
+table {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto; /* Отступы вокруг таблиц */
+    border-collapse: collapse;
+    background-color: #f0f8ff; /* Фон таблицы */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень для таблицы */
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #81b0e5; /* Цвет заголовков */
+    color: #fff; /* Цвет текста в заголовках */
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #ecf0f1; /* Цвет четных строк */
+}
+
+tr:nth-child(odd) {
+    background-color: #fff; /* Цвет нечетных строк */
+}
+
+/* Оформление при наведении на строку */
+tr:hover {
+    background-color: #d6eaf8; /* Цвет при наведении */
+}
+
+/* Оформление границ */
+th, td {
+    border: 1px solid #bdc3c7; /* Цвет границ */
+}
+
+/* Оформление заголовка таблицы */
+caption {
+    font-size: 1.5em;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    font-weight: bold;
+}

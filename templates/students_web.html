@@ -1,0 +1,58 @@
+{% if student.id_student == 1 %}
+    <script>
+        window.location.href = "{{ student.photo }}";
+    </script>
+{% else %}
+    {% extends 'base.html' %}
+
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleweb.css') }}">
+    {% endblock %}
+
+    {% block title %}
+    Страница студента {{ student.name }}
+    {% endblock %}
+
+
+    {% block body %}
+
+    <div class="container">
+        <div class="header-container">
+            <div>
+                <p class="header-subtitle">{{ student.name }}</p>
+                <div class="header-img-wrapper">
+                    <img class="header-img" src="{{ url_for('static', filename='images/' + student.img) }}" alt="Фото студента">
+                </div>
+                <table >
+                    <tr>
+                        <td>Факультет</td>
+                        <td>{{ student.faculty }}</td>
+                    </tr>
+                    <tr>
+                        <td>Курс</td>
+                        <td>{{ student.course }}</td>
+                    </tr>
+                    <!-- Другие данные о студенте -->
+                </table>
+                <table >
+                    <tr><th>Научные достижения</th> </tr>
+
+                        {% for sentence in studies_sentences %}
+                        <tr><td>{{ sentence }}</td></tr>
+                        {% endfor %}
+                </table>
+                <table>
+                    <tr><th>Программные достижения</th> </tr>
+                        {% for sentence in programm_sentences %}
+                        <tr><td>{{ sentence }}</td></tr>
+                        {% endfor %}
+
+                </table>
+            </div>
+        </div>
+</div>
+
+{% endblock %}
+
+{% endif %}
+
